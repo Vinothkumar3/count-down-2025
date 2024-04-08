@@ -1,0 +1,124 @@
+:root{
+   --min-width:300px;
+   --primary-color:#111111;
+   --year-color:#10b196;
+   --secondary-color:#020202;
+   --bg-color:#ac0b49ea;
+}
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+    font-family: cursive;
+    background-image: url("/newyear.png");
+    
+
+}
+
+h1{
+    color:var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-weight: 900;
+}
+
+.year{
+    font-size: 5em;
+    color:var(--year-color);
+    font-weight: 900;
+}
+
+.countdown{
+    display: flex;
+    margin: 5rem;
+    padding: 3rem;
+    min-width:var(--min-width);
+    align-items: center;
+    border-radius: 3rem;
+    justify-content: center;
+    background-color: var(--bg-color);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+  
+}
+
+.countdown div{
+    margin: 0 3rem;
+    font-weight: 500;
+    font-size: 3rem;
+    position: relative;
+    text-align: center;
+    
+}
+
+.countdown div::before{
+    content: "";
+    position: absolute;
+    bottom: -35px;
+    font-size: .5em;
+    left: 0;
+    line-height: 35px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+    width: 100%;
+    height: 35px;
+}
+
+.countdown #day::before{
+    content:"Days";
+}
+
+.countdown #hour::before{
+    content: "Hours";
+    
+}
+
+.countdown #minutes::before{
+    content: "Minutes";
+    
+}
+
+.countdown #second::before{
+    content: "Seconds";
+}
+
+@media(width<850px){
+    
+    body{
+        display: flex;
+        margin-top: 30px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    .year{
+     font-size: 2rem;
+    }
+
+    .countdown {
+     display: flow-root;
+     font-size: medium;
+     gap: 7rem;
+     margin: 0 0;
+     padding-left: 0;
+    }
+
+    .countdown div{
+        margin-top: 2rem;
+    }
+   
+}
